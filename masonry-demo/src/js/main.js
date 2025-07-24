@@ -13,49 +13,49 @@ const produits = [
   {
     titre: "Casque Sony WH-CH720N",
     prix: "69,99 €",
-    image: "/src/images/Casque-audio-sans-fil-SONY-Bluetooth-a-reduction-de-bruit-WH-CH720N-Noir-removebg-preview.png",
+    image: "https://cdn.jsdelivr.net/gh/nanaelie/masonry/masonry-demo/src/images/Casque-audio-sans-fil-SONY-Bluetooth-a-reduction-de-bruit-WH-CH720N-Noir-removebg-preview.png",
     desc: "Casque sans fil à réduction de bruit active. Son immersif, autonomie longue durée, design léger."
   },
   {
     titre: "Écouteurs I18 TWS Blanc",
     prix: "14,99 €",
-    image: "/src/images/Ecouteur-Bluetooth-Charge-Du-Controle-Tactile-Sans-Fil-Intelligent-I18-Tws-Blanc-removebg-preview.png",
+    image: "https://cdn.jsdelivr.net/gh/nanaelie/masonry/masonry-demo/src/images/Ecouteur-Bluetooth-Charge-Du-Controle-Tactile-Sans-Fil-Intelligent-I18-Tws-Blanc-removebg-preview.png",
     desc: "Écouteurs Bluetooth avec contrôle tactile intelligent, boîtier de charge compact, bonne autonomie."
   },
   {
     titre: "Xiaomi Redmi Buds 6 Pro",
     prix: "29,99 €",
-    image: "/src/images/Ecouteurs-intra-auriculaires-sans-fil-Bluetooth-Xiaomi-Redmi-Buds-6-Pro-avec-reduction-de-bruit-Noir-removebg-preview.png",
+    image: "https://cdn.jsdelivr.net/gh/nanaelie/masonry/masonry-demo/src/images/Ecouteurs-intra-auriculaires-sans-fil-Bluetooth-Xiaomi-Redmi-Buds-6-Pro-avec-reduction-de-bruit-Noir-removebg-preview.png",
     desc: "Intra-auriculaires à réduction de bruit, Bluetooth 5.3, son puissant et stable, boîtier ergonomique."
   },
   {
     titre: "Bose QC Earbuds II",
     prix: "249,99 €",
-    image: "/src/images/Ecouteurs-sans-fil-Bluetooth-Bose-QuietComfort-Earbuds-II-avec-reduction-de-bruit-Noir-removebg-preview.png",
+    image: "https://cdn.jsdelivr.net/gh/nanaelie/masonry/masonry-demo/src/images/Ecouteurs-sans-fil-Bluetooth-Bose-QuietComfort-Earbuds-II-avec-reduction-de-bruit-Noir-removebg-preview.png",
     desc: "Qualité audio exceptionnelle avec ANC de pointe. Confort supérieur et autonomie jusqu’à 24h."
   },
   {
     titre: "JBL Tune Flex",
     prix: "49,99 €",
-    image: "/src/images/Ecouteurs-sans-fil-Bluetooth-JBL-Tune-Flex-avec-reduction-de-bruit-Noir-removebg-preview.png",
+    image: "https://cdn.jsdelivr.net/gh/nanaelie/masonry/masonry-demo/src/images/Ecouteurs-sans-fil-Bluetooth-JBL-Tune-Flex-avec-reduction-de-bruit-Noir-removebg-preview.png",
     desc: "Écouteurs JBL au son Pure Bass. Réduction active du bruit, résistants à l’eau (IPX4), autonomie fiable."
   },
   {
     titre: "Bose Ultra Open (Blanc)",
     prix: "299,99 €",
-    image: "/src/images/Ecouteurs-sans-fil-Bose-Ultra-Open-Earbuds-Blanc-removebg-preview.png",
+    image: "https://cdn.jsdelivr.net/gh/nanaelie/masonry/masonry-demo/src/images/Ecouteurs-sans-fil-Bose-Ultra-Open-Earbuds-Blanc-removebg-preview.png",
     desc: "Conception ouverte pour écoute immersive et environnementale. Design unique et confort longue durée."
   },
   {
     titre: "Bose Ultra Open (Noir)",
     prix: "299,99 €",
-    image: "/src/images/Ecouteurs-sans-fil-Bose-Ultra-Open-Earbuds-Noir-removebg-preview.png",
+    image: "https://cdn.jsdelivr.net/gh/nanaelie/masonry/masonry-demo/src/images/Ecouteurs-sans-fil-Bose-Ultra-Open-Earbuds-Noir-removebg-preview.png",
     desc: "Même expérience Bose Ultra Open en noir élégant. Audio premium et maintien parfait à l’oreille."
   },
   {
     titre: "Samsung Galaxy Buds3 Pro",
     prix: "199,99 €",
-    image: "/src/images/Ecouteurs-sans-fil-Samsung-Galaxy-Buds3-Pro-Bluetooth-avec-reduction-active-du-bruit-Argent-removebg-preview.png",
+    image: "https://cdn.jsdelivr.net/gh/nanaelie/masonry/masonry-demo/src/images/Ecouteurs-sans-fil-Samsung-Galaxy-Buds3-Pro-Bluetooth-avec-reduction-active-du-bruit-Argent-removebg-preview.png",
     desc: "Design futuriste, réduction active du bruit (ANC), audio AKG, chargement rapide, compatibilité Android/iOS."
   }
 ];
