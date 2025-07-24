@@ -9,151 +9,116 @@ const $$ = (e, ev = undefined, callback = undefined) => {
     return all;
 }
 
-/*const __new = (a) => {
-    const tagName=a.tagName,
-    className = a.className ?? undefined,
-    style = a.style ?? undefined,
-    html = a.html ?? undefined,
-    text = a.text ?? undefined;
-    
-    const __i = document.createElement(tagName);
-    __i.setAttribute('class', `${className ?? ''}`);
-    __i.innerHTML = html ?? '';
-    __i.innerText = text ?? '';
-    __i.style = style ?? '';
-    return __i;
-}*/
-
-function __new({ tagName, className, text, innerHTML, style }) {
-  const el = document.createElement(tagName);
-  if (className) el.className = className;
-  if (text) el.textContent = text;
-  if (innerHTML) el.innerHTML = innerHTML;
-  if (style) el.setAttribute('style', style);
-  return el;
-}
-
-/*
-const renderTestItems = [
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    text: '📦 Carte produit',
-    style: 'background: #f9f9f9; padding: 1rem; border-radius: .5rem; box-shadow: 0 0 5px #ddd;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    innerHTML: '<img src="https://picsum.photos/200/280?random=1" style="width: 100%; border-radius: .5rem;">',
-    style: 'background: #fafafa; padding: .5rem; border-radius: .5rem; box-shadow: 0 0 4px #ccc;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    text: '💡 Astuce #1\nUtilise une disposition fluide pour t’adapter à l’écran.',
-    style: 'white-space: pre-wrap; background: #fefae0; padding: 1rem; border-left: 4px solid #00bcd4; border-radius: .5rem;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    innerHTML: '<h4>📰 Article</h4><p>Contenu riche avec texte de test pour voir la hauteur variable.</p>',
-    style: 'padding: 1rem; background: #f5f5f5; border-radius: .5rem; border: 1px solid #ddd;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    innerHTML: '<img src="https://picsum.photos/200/310?random=2" style="width: 100%; border-radius: .5rem;">',
-    style: 'background: #fafafa; padding: .5rem; border-radius: .5rem; box-shadow: 0 0 6px #ccc;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    text: '🛒 Panier - 3 articles',
-    style: 'padding: 1rem; background: #eceff1; border: 1px dashed #90a4ae; border-radius: .5rem;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    innerHTML: '<img src="https://picsum.photos/200/260?random=3" style="width: 100%; border-radius: .5rem;">',
-    style: 'padding: .5rem; background: #f8f9fa; box-shadow: 0 0 4px #bbb; border-radius: .5rem;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    innerHTML: '<h3>🎬 Vidéo</h3><p>Ici on teste du contenu textuel avec titre.</p>',
-    style: 'padding: 1rem; background: #fff3e0; border-left: 4px solid #fb8c00; border-radius: .5rem;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    text: '📅 Événement : Conférence Web à 14h',
-    style: 'padding: 1rem; background: #e3f2fd; border: 1px solid #90caf9; border-radius: .5rem;'
-  }),
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    innerHTML: '<img src="https://picsum.photos/200/300?random=4" style="width: 100%; border-radius: .5rem;">',
-    style: 'padding: .5rem; background: #f9f9f9; border-radius: .5rem; box-shadow: 0 0 6px #ccc;'
-  })
-];*/
-
 const produits = [
   {
-    titre: "Casque Bluetooth",
-    prix: "18 000 FCFA",
-    image: "https://picsum.photos/200/260?random=10",
-    desc: "Son HD, autonomie 12h, compatible Android/iOS."
+    titre: "Casque Sony WH-CH720N",
+    prix: "69,99 €",
+    image: "/src/images/Casque-audio-sans-fil-SONY-Bluetooth-a-reduction-de-bruit-WH-CH720N-Noir-removebg-preview.png",
+    desc: "Casque sans fil à réduction de bruit active. Son immersif, autonomie longue durée, design léger."
   },
   {
-    titre: "Montre connectée",
-    prix: "15 000 FCFA",
-    image: "https://picsum.photos/200/260?random=11",
-    desc: "Cardio, notifications, bracelet silicone résistant."
+    titre: "Écouteurs I18 TWS Blanc",
+    prix: "14,99 €",
+    image: "/src/images/Ecouteur-Bluetooth-Charge-Du-Controle-Tactile-Sans-Fil-Intelligent-I18-Tws-Blanc-removebg-preview.png",
+    desc: "Écouteurs Bluetooth avec contrôle tactile intelligent, boîtier de charge compact, bonne autonomie."
   },
   {
-    titre: "Enceinte portable",
-    prix: "9 500 FCFA",
-    image: "https://picsum.photos/200/260?random=12",
-    desc: "Bluetooth 5.0, étanche IPX6, basses puissantes."
+    titre: "Xiaomi Redmi Buds 6 Pro",
+    prix: "29,99 €",
+    image: "/src/images/Ecouteurs-intra-auriculaires-sans-fil-Bluetooth-Xiaomi-Redmi-Buds-6-Pro-avec-reduction-de-bruit-Noir-removebg-preview.png",
+    desc: "Intra-auriculaires à réduction de bruit, Bluetooth 5.3, son puissant et stable, boîtier ergonomique."
   },
   {
-    titre: "Mini ventilateur USB",
-    prix: "3 000 FCFA",
-    image: "https://picsum.photos/200/260?random=13",
-    desc: "Compact, silencieux, idéal bureau ou voyage."
+    titre: "Bose QC Earbuds II",
+    prix: "249,99 €",
+    image: "/src/images/Ecouteurs-sans-fil-Bluetooth-Bose-QuietComfort-Earbuds-II-avec-reduction-de-bruit-Noir-removebg-preview.png",
+    desc: "Qualité audio exceptionnelle avec ANC de pointe. Confort supérieur et autonomie jusqu’à 24h."
   },
   {
-    titre: "Sac à dos étanche",
-    prix: "12 500 FCFA",
-    image: "https://picsum.photos/200/260?random=14",
-    desc: "Design urbain, compartiment laptop, 25L."
+    titre: "JBL Tune Flex",
+    prix: "49,99 €",
+    image: "/src/images/Ecouteurs-sans-fil-Bluetooth-JBL-Tune-Flex-avec-reduction-de-bruit-Noir-removebg-preview.png",
+    desc: "Écouteurs JBL au son Pure Bass. Réduction active du bruit, résistants à l’eau (IPX4), autonomie fiable."
   },
   {
-    titre: "Lampe LED rechargeable",
-    prix: "6 000 FCFA",
-    image: "https://picsum.photos/200/260?random=15",
-    desc: "Lumière blanche chaude, 3 niveaux d’intensité."
+    titre: "Bose Ultra Open (Blanc)",
+    prix: "299,99 €",
+    image: "/src/images/Ecouteurs-sans-fil-Bose-Ultra-Open-Earbuds-Blanc-removebg-preview.png",
+    desc: "Conception ouverte pour écoute immersive et environnementale. Design unique et confort longue durée."
+  },
+  {
+    titre: "Bose Ultra Open (Noir)",
+    prix: "299,99 €",
+    image: "/src/images/Ecouteurs-sans-fil-Bose-Ultra-Open-Earbuds-Noir-removebg-preview.png",
+    desc: "Même expérience Bose Ultra Open en noir élégant. Audio premium et maintien parfait à l’oreille."
+  },
+  {
+    titre: "Samsung Galaxy Buds3 Pro",
+    prix: "199,99 €",
+    image: "/src/images/Ecouteurs-sans-fil-Samsung-Galaxy-Buds3-Pro-Bluetooth-avec-reduction-active-du-bruit-Argent-removebg-preview.png",
+    desc: "Design futuriste, réduction active du bruit (ANC), audio AKG, chargement rapide, compatibilité Android/iOS."
   }
 ];
 
-var renderTestItems = produits.map(p =>
-  __new({
-    tagName: 'div',
-    className: 'dash-card',
-    innerHTML: `
-      <div class="product-card">
-        <img src="${p.image}" alt="${p.titre}" class="product-image" />
-        <h3 class="product-title">${p.titre}</h3>
-        <p class="product-price">${p.prix}</p>
-        <p class="product-desc">${p.desc}</p>
-      </div>
-    `,
-    style: 'background: #fff; padding: .8rem; border-radius: .75rem; box-shadow: 0 0 6px #ddd;'
-  })
-);
 
-renderTestItems.push(...renderTestItems);
-renderTestItems.push(...renderTestItems);
+produits.push(...produits);
+
+function __new(options) {
+    const el = document.createElement(options.tagName);
+
+    if (options.className) el.className = options.className;
+    if (options.text) el.textContent = options.text;
+    if (options.style) el.setAttribute('style', options.style);
+
+    if (options.attrs) {
+        for (const key in options.attrs) {
+            if (Object.hasOwn(options.attrs, key)) {
+                el.setAttribute(key, options.attrs[key]);
+            }
+        }
+    }
+
+    if (Array.isArray(options.children)) {
+        for (const child of options.children) {
+            el.appendChild(child);
+        }
+    }
+
+    return el;
+}
+
+const renderTestItems = produits.map((p) =>
+    __new({
+        tagName: 'div',
+        className: 'dash-card',
+        style: 'background: #fff; padding: .8rem; border-radius: .75rem; box-shadow: 0 0 6px #ddd;',
+        children: [
+            __new({
+                tagName: 'img',
+                className: 'product-image',
+                attrs: {
+                    src: p.image,
+                    alt: p.titre
+                }
+            }),
+            __new({
+                tagName: 'h3',
+                className: 'product-title',
+                text: p.titre
+            }),
+            __new({
+                tagName: 'p',
+                className: 'product-price',
+                text: p.prix
+            }),
+            __new({
+                tagName: 'p',
+                className: 'product-desc',
+                text: p.desc
+            })
+        ]
+    })
+);
 
 masonry({
     col: 4,
