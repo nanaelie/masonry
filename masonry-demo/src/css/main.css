@@ -45,18 +45,29 @@ body {
 .product-title {
     font-size: 1rem;
     font-weight: 600;
-    margin: 0;
+    margin-block: .4rem;
     color: #333;
 }
 
 .product-price {
     color: #00a859;
     font-weight: 700;
-    margin: 0;
+    margin-bottom: .4rem;
 }
 
 .product-desc {
     font-size: 0.85rem;
     color: #666;
-    margin: 0;
+    margin-bottom: .4rem;
+}
+
+.product-buy {
+    width: 100%;
+    margin: .3rem;
+    border-radius: .5rem;
+    outline: none;
+    border: 1px solid;
+    padding: 1rem;
+    color: #fff;
+    background-color: #ff4500;
 }

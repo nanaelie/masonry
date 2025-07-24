@@ -1,14 +1,3 @@
-const $ = (e) => document.querySelector(e);
-const $$ = (e, ev = undefined, callback = undefined) => {
-    const all = document.querySelectorAll(e);
-    if (ev && callback) {
-        all.forEach(k => {
-            k.addEventListener(ev, callback(k));
-        });
-    }
-    return all;
-}
-
 const produits = [
   {
     titre: "Casque Sony WH-CH720N",
@@ -115,32 +104,20 @@ const renderTestItems = produits.map((p) =>
                 tagName: 'p',
                 className: 'product-desc',
                 text: p.desc
+            }),
+            __new({
+                tagName: 'button',
+                className: 'product-buy',
+                text: "Acheter"
             })
         ]
     })
 );
 
 masonry({
-    col: 4,
+    col: 2,
     spaceX: 5,
     spaceY: 5,
     renderItems: renderTestItems,
     container: '.container',
 });
-
-/*
-(() => {
-    const items= [];
-    
-    for (let i = 0; i < renderTestItems.length; i++) {
-        const __k = __new({
-            tagName: 'div',
-            className: 'dash-card',
-            text: renderTestItems[i],
-            style: "color: #999; border: .05rem solid; border-radius: .5rem",
-        });
-        items.push(__k);
-    }
-    return items;
-})(),
-*/
