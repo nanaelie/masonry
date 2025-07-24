@@ -3,7 +3,6 @@ import {
     makeSpaceX,
     createCols,
     getResponsiveCol,
-    getLastFilledRowIndex,
     initItemsCounter
 } from './src/utils/utils';
 import { MasonryProps } from './src/interfaces/interfaces';
@@ -31,8 +30,8 @@ function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = 
         itemsCounter[i % col] += 1;
     }
 
-    for (let i in cols) {
-        $(`${container}`).appendChild(cols[i]);
+    for (let colElement of cols) {
+        $(`${container}`).appendChild(colElement);
     }
 
     if (debug) {
