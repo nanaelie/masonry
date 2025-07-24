@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "name": "masonry",
+  "description": "Moteur léger en JavaScript (TypeScript) pour créer des grilles de type \"masonry\" dynamiques, sans dépendance.",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "rollup.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanaelie/masonry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanaelie/masonry/issues"
+  },
+  "homepage": "https://github.com/nanaelie/masonry#readme",
+  "devDependencies": {
+    "rollup": "^4.45.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.8.3"
+  }
+}
