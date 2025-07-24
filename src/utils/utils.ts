@@ -9,12 +9,12 @@ function createCols(pad: number): HTMLElement {
     return col;
 }
 
-type ColConfig = {
-    default: 1,
-    sm: 2,
-    md: 3,
-    lg: 4,
-    xl: 5,
+interface ColConfig {
+    default?: 1,
+    sm?: 2,
+    md?: 3,
+    lg?: 4,
+    xl?: 5,
 }
 
 function makeSpaceX(spaceY: number, container: string) {
@@ -31,12 +31,12 @@ function getResponsiveCol(config: ColConfig): number {
     return config.default || 1;
 }
 
-function getLastFilledRowIndex(cols: HTMLDivElement[]) {
+/*function getLastFilledRowIndex(cols: HTMLDivElement[]) {
     let lastIndex = 0;
     for (let i in cols) {
         // if (cols[i].querySelectorAll('*'))
     }
-}
+}*/
 
 function initItemsCounter(col: number): number[] {
     const items: number[] = [];
@@ -46,4 +46,4 @@ function initItemsCounter(col: number): number[] {
     return items;
 }
 
-export { makeSpaceX, createCols, getResponsiveCol, getLastFilledRowIndex, initItemsCounter };
+export { makeSpaceX, createCols, getResponsiveCol, initItemsCounter };
