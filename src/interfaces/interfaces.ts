@@ -5,5 +5,5 @@ export interface MasonryProps {
 	spaceX?: number;
 	spaceY?: number;
 	gap?: number;
-	debug?: boolean;
+	log?: boolean;
 }
