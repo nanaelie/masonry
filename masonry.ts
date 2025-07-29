@@ -7,7 +7,7 @@ import {
 } from './src/utils/utils';
 import { type MasonryProps } from './src/interfaces/interfaces';
 
-function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, debug = false }: MasonryProps) {
+function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, log = false }: MasonryProps) {
     let last = 0;
     
     if (!col) {
@@ -32,7 +32,7 @@ function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, debug =
         nLastItemCols = renderItems.length % col;
     }
     
-    if (debug) {
+    if (log) {
     	console.log(` - There are ${col} columns`);
         console.log(` - Recieved ${renderItems.length} items`);
         console.log(` - Each column has ${nItemByCols} rows`);
@@ -51,7 +51,7 @@ function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, debug =
         $(`${container}`).appendChild(colElement);
     }
 
-    if (debug) {
+    if (log) {
         console.log('terminé');
     }
 }
