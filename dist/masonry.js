@@ -18,6 +18,25 @@
         $(`${container}`).style.display = `flex`;
         $(`${container}`).style.gap = `${spaceY}px`;
     }
+    function getResponsiveCol() {
+        const config = {
+            default: 1,
+            sm: 2,
+            md: 3,
+            lg: 4,
+            xl: 5,
+        };
+        const w = window.innerWidth;
+        if (w >= 1280 && config.xl)
+            return config.xl;
+        if (w >= 1024 && config.lg)
+            return config.lg;
+        if (w >= 768 && config.md)
+            return config.md;
+        if (w >= 640 && config.sm)
+            return config.sm;
+        return config.default || 1;
+    }
     function initItemsCounter(col) {
         const items = [];
         for (let k = 0; k < col; k++) {
@@ -26,9 +45,16 @@
         return items;
     }
 
-    function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = false }) {
+    function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, debug = false }) {
+        if (!col) {
+            col = getResponsiveCol();
+        }
         let nItemByCols = renderItems.length / col;
         let nLastItemCols = nItemByCols;
+        if (!spaceX)
+            spaceX = gap;
+        if (!spaceY)
+            spaceY = gap;
         makeSpaceX(spaceX, container);
         let cols = [];
         let itemsCounter = initItemsCounter(col);
