@@ -39,6 +39,13 @@
         if (renderItems.length % col != 0) {
             nLastItemCols = renderItems.length % col;
         }
+        if (debug) {
+            console.log(` - There are ${col} columns`);
+            console.log(` - Recieved ${renderItems.length} items`);
+            console.log(` - Each column has ${nItemByCols} rows`);
+            nLastItemCols != nItemByCols ? console.log(` - The first column has ${nLastItemCols} rows`) : '';
+            console.log(` - ItemsCounter = ${itemsCounter}`);
+        }
         for (let i = 0; i < renderItems.length; i++) {
             renderItems[i].style.transition = 'all 0.3s ease';
             cols[i % col].appendChild(renderItems[i]);
@@ -50,10 +57,6 @@
         }
         if (debug) {
             console.log('terminé');
-            console.log(` - There are ${col} columns`);
-            console.log(` - Each column has ${nItemByCols} rows`);
-            nLastItemCols != nItemByCols ? console.log(` - The first column has ${nLastItemCols} rows`) : '';
-            console.log(` - ItemsCounter = ${itemsCounter}`);
         }
         return {
             append(item) {
