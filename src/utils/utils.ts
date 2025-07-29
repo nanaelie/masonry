@@ -9,20 +9,23 @@ function createCols(pad: number): HTMLElement {
     return col;
 }
 
-interface ColConfig {
-    default?: 1,
-    sm?: 2,
-    md?: 3,
-    lg?: 4,
-    xl?: 5,
-}
-
 function makeSpaceX(spaceY: number, container: string) {
     $(`${container}`).style.display = `flex`;
     $(`${container}`).style.gap = `${spaceY}px`;
 }
 
-function getResponsiveCol(config: ColConfig): number {
+function styleContainer(container: string) {
+	$(`${container}`).style.padding = '4px';
+}
+
+function getResponsiveCol(): number {
+	const config = {
+		default: 1,
+		sm: 2,
+		md: 3,
+		lg: 4,
+		xl: 5,
+	}
     const w = window.innerWidth;
     if (w >= 1280 && config.xl) return config.xl;
     if (w >= 1024 && config.lg) return config.lg;
