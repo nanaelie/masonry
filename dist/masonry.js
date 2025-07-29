@@ -29,7 +29,6 @@
     function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = false }) {
         let nItemByCols = renderItems.length / col;
         let nLastItemCols = nItemByCols;
-        let last = 0;
         makeSpaceX(spaceX, container);
         let cols = [];
         let itemsCounter = initItemsCounter(col);
@@ -50,7 +49,6 @@
             renderItems[i].style.transition = 'all 0.3s ease';
             cols[i % col].appendChild(renderItems[i]);
             itemsCounter[i % col] += 1;
-            last = i % col;
         }
         for (let colElement of cols) {
             $(`${container}`).appendChild(colElement);
@@ -58,12 +56,6 @@
         if (debug) {
             console.log('terminé');
         }
-        return {
-            append(item) {
-                cols[last].append(item);
-                $(`${container}`).appendChild(cols[last]);
-            }
-        };
     }
 
     return masonry;
