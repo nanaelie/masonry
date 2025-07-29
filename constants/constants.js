@@ -1,4 +1,1 @@
-"use strict";
-exports.__esModule = true;
-function $(e) { return document.querySelector(e); }
-exports["default"] = $;
+export default function $(e) { return document.querySelector(e); }
