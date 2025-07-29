@@ -1,18 +1,33 @@
-"use strict";
-exports.__esModule = true;
-exports.createCols = exports.makeSpaceX = void 0;
-var constants_1 = require("../../constants/constants");
+import $ from '../../constants/constants';
 function createCols(pad) {
-    var col = document.createElement('div');
+    const col = document.createElement('div');
     col.style.display = 'flex';
     col.style.flexDirection = 'column';
-    col.style.gap = "".concat(pad, "px");
+    col.style.gap = `${pad}px`;
     col.style.flexGrow = '1';
     return col;
 }
-exports.createCols = createCols;
 function makeSpaceX(spaceY, container) {
-    (0, constants_1["default"])("".concat(container)).style.display = "flex";
-    (0, constants_1["default"])("".concat(container)).style.gap = "".concat(spaceY, "px");
+    $(`${container}`).style.display = `flex`;
+    $(`${container}`).style.gap = `${spaceY}px`;
 }
-exports.makeSpaceX = makeSpaceX;
+function getResponsiveCol(config) {
+    const w = window.innerWidth;
+    if (w >= 1280 && config.xl)
+        return config.xl;
+    if (w >= 1024 && config.lg)
+        return config.lg;
+    if (w >= 768 && config.md)
+        return config.md;
+    if (w >= 640 && config.sm)
+        return config.sm;
+    return config.default || 1;
+}
+function initItemsCounter(col) {
+    const items = [];
+    for (let k = 0; k < col; k++) {
+        items.push(0);
+    }
+    return items;
+}
+export { makeSpaceX, createCols, getResponsiveCol, initItemsCounter };
