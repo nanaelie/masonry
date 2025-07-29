@@ -47,13 +47,6 @@ function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = 
     if (debug) {
         console.log('terminé');
     }
-
-    return {
-        append(item: HTMLElement) {
-            cols[last].append(item);
-            $(`${container}`).appendChild(cols[last]);
-        }
-    }
 }
 
 export default masonry;
