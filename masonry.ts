@@ -11,7 +11,7 @@ function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = 
     let nItemByCols: number = renderItems.length / col;
     let nLastItemCols: number = nItemByCols;
     let last = 0;
-
+    
     makeSpaceX(spaceX, container);
 
     let cols: HTMLElement[] = [];
@@ -23,6 +23,14 @@ function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = 
 
     if (renderItems.length % col != 0) {
         nLastItemCols = renderItems.length % col;
+    }
+    
+    if (debug) {
+    	console.log(` - There are ${col} columns`);
+        console.log(` - Recieved ${renderItems.length} items`);
+        console.log(` - Each column has ${nItemByCols} rows`);
+        nLastItemCols != nItemByCols ? console.log(` - The first column has ${nLastItemCols} rows`) : '';
+        console.log(` - ItemsCounter = ${itemsCounter}`);
     }
 
     for (let i = 0; i < renderItems.length; i++) {
@@ -38,10 +46,6 @@ function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = 
 
     if (debug) {
         console.log('terminé');
-        console.log(` - There are ${col} columns`);
-        console.log(` - Each column has ${nItemByCols} rows`);
-        nLastItemCols != nItemByCols ? console.log(` - The first column has ${nLastItemCols} rows`) : '';
-        console.log(` - ItemsCounter = ${itemsCounter}`);
     }
 
     return {
