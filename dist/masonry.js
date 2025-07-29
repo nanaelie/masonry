@@ -45,7 +45,7 @@
         return items;
     }
 
-    function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, debug = false }) {
+    function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, log = false }) {
         if (!col) {
             col = getResponsiveCol();
         }
@@ -64,7 +64,7 @@
         if (renderItems.length % col != 0) {
             nLastItemCols = renderItems.length % col;
         }
-        if (debug) {
+        if (log) {
             console.log(` - There are ${col} columns`);
             console.log(` - Recieved ${renderItems.length} items`);
             console.log(` - Each column has ${nItemByCols} rows`);
@@ -79,7 +79,7 @@
         for (let colElement of cols) {
             $(`${container}`).appendChild(colElement);
         }
-        if (debug) {
+        if (log) {
             console.log('terminé');
         }
     }
