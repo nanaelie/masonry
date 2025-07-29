@@ -1,5 +1,5 @@
 export interface MasonryProps {
-	col: number;
+	col?: number;
 	renderItems: HTMLElement[];
 	container: string;
 	spaceX?: number;

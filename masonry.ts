@@ -5,13 +5,20 @@ import {
     getResponsiveCol,
     initItemsCounter
 } from './src/utils/utils';
-import { MasonryProps } from './src/interfaces/interfaces';
+import { type MasonryProps } from './src/interfaces/interfaces';
 
-function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = false }: MasonryProps) {
+function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, debug = false }: MasonryProps) {
+    let last = 0;
+    
+    if (!col) {
+    	col = getResponsiveCol()
+    }
     let nItemByCols: number = renderItems.length / col;
     let nLastItemCols: number = nItemByCols;
-    let last = 0;
-
+    
+    if (!spaceX) spaceX = gap;
+    if (!spaceY) spaceY = gap;
+    
     makeSpaceX(spaceX, container);
 
     let cols: HTMLElement[] = [];
@@ -23,6 +30,14 @@ function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = 
 
     if (renderItems.length % col != 0) {
         nLastItemCols = renderItems.length % col;
+    }
+    
+    if (debug) {
+    	console.log(` - There are ${col} columns`);
+        console.log(` - Recieved ${renderItems.length} items`);
+        console.log(` - Each column has ${nItemByCols} rows`);
+        nLastItemCols != nItemByCols ? console.log(` - The first column has ${nLastItemCols} rows`) : '';
+        console.log(` - ItemsCounter = ${itemsCounter}`);
     }
 
     for (let i = 0; i < renderItems.length; i++) {
@@ -38,17 +53,6 @@ function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = 
 
     if (debug) {
         console.log('terminé');
-        console.log(` - There are ${col} columns`);
-        console.log(` - Each column has ${nItemByCols} rows`);
-        nLastItemCols != nItemByCols ? console.log(` - The first column has ${nLastItemCols} rows`) : '';
-        console.log(` - ItemsCounter = ${itemsCounter}`);
-    }
-
-    return {
-        append(item: HTMLElement) {
-            cols[last].append(item);
-            $(`${container}`).appendChild(cols[last]);
-        }
     }
 }
 
