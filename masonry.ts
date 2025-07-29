@@ -5,12 +5,19 @@ import {
     getResponsiveCol,
     initItemsCounter
 } from './src/utils/utils';
-import { MasonryProps } from './src/interfaces/interfaces';
+import { type MasonryProps } from './src/interfaces/interfaces';
 
-function masonry({ col, renderItems, container, spaceX = 1, spaceY = 1, debug = false }: MasonryProps) {
+function masonry({ col, renderItems, container, spaceX, spaceY, gap = 4, debug = false }: MasonryProps) {
+    let last = 0;
+    
+    if (!col) {
+    	col = getResponsiveCol()
+    }
     let nItemByCols: number = renderItems.length / col;
     let nLastItemCols: number = nItemByCols;
-    let last = 0;
+    
+    if (!spaceX) spaceX = gap;
+    if (!spaceY) spaceY = gap;
     
     makeSpaceX(spaceX, container);
 
