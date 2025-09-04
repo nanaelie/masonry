@@ -115,7 +115,7 @@ const renderTestItems = produits.map((p) =>
 );
 
 masonry({
-	col: 2,
+	col: 4,
 	spaceX: 5,
 	spaceY: 5,
 	renderItems: renderTestItems,
