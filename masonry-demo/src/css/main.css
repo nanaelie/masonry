@@ -25,6 +25,7 @@ body {
     width: auto;
     height: auto;
     padding: .5rem;
+    flex-grow: 1;
     box-sizing: border-box;
 }
 
