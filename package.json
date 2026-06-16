@@ -1,26 +1,81 @@
 {
-  "scripts": {
-    "build": "rollup -c"
-  },
-  "name": "masonry",
-  "description": "Moteur léger en JavaScript (TypeScript) pour créer des grilles de type \"masonry\" dynamiques, sans dépendance.",
-  "version": "1.0.0",
-  "type": "module",
-  "main": "rollup.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nanaelie/masonry.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nanaelie/masonry/issues"
-  },
-  "homepage": "https://github.com/nanaelie/masonry#readme",
-  "devDependencies": {
-    "rollup": "^4.45.1",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "typescript": "^5.8.3"
-  }
+	"name": "masonry",
+	"homepage": "https://github.com/nanaelie/masonry#readme",
+	"description": "Moteur léger en JavaScript (TypeScript) pour créer des grilles de type \"masonry\" dynamiques, sans dépendance.",
+	"version": "1.0.0",
+	"license": "MIT",
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"unpkg": "./dist/index.global.js",
+	"jsdelivr": "./dist/index.global.js",
+	"keywords": [
+		"masonry",
+		"view",
+		"ui",
+		"graphs",
+		"design",
+		"responsive"
+	],
+	"scripts": {
+		"build:tsup": "tsup",
+		"autobuild": "rollup -c -w",
+		"copyDeclarations": "node -e \"fs.cpSync('./src/types/', './dist/types/', {recursive:true})\"",
+		"emitDeclarations": "tsc --emitDeclarationOnly && npm copyDeclarations",
+		"build": "rollup -c && npm emitDeclarations",
+		"docs": "npm run build && npm --filter \"./docs/**\" build",
+		"docs:dev": "npm run build && npm --filter \"./docs/**\" dev",
+		"lint-js": "eslint \"src/**/*.{js,ts}\" \"test/**/*.js\" \"docs/**/*.js\" --cache",
+		"lint-md": "eslint \"**/*.md\" --cache",
+		"lint-types": "npm build && node test/types/autogen.js && tsc -p test/types",
+		"lint": "concurrently \"npm:lint-*\"",
+		"test": "npm lint && npm test-ci",
+		"test-ci": "concurrently \"npm:test-ci-*\"",
+		"test-ci-integration": "npm --filter \"./test/integration/**\" test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nanaelie/masonry.git"
+	},
+	"author": "",
+	"bugs": {
+		"url": "https://github.com/nanaelie/masonry/issues"
+	},
+	"peerDependencies": {
+		"react": "^19.2.7",
+		"react-dom": ">=18"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^29.0.3",
+		"@rollup/plugin-node-resolve": "^16.0.3",
+		"@rollup/plugin-typescript": "^12.3.0",
+		"@types/react": "^19.2.17",
+		"@types/react-dom": "^19.2.3",
+		"rollup": "^4.62.0",
+		"rollup-plugin-dts": "^6.4.1",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"rollup-plugin-typescript2": "^0.36.0",
+		"typescript": "^5.9.3"
+	},
+	"engines": {
+		"npm": ">=8"
+	},
+	"packageManager": "npm@8.13.0",
+	"npm": {
+		"overrides": {
+			"html-entities": "1.4.0"
+		},
+		"peerDependencyRules": {
+			"ignoreMissing": [
+				"masonry.js"
+			]
+		}
+	},
+	"dependencies": {
+		"tsup": "^8.5.1"
+	}
 }
