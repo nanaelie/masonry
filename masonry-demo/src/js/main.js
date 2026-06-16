@@ -49,7 +49,7 @@ const produits = [
 	}
 ];
 
-
+/*
 produits.push(...produits);
 
 function __new(options) {
@@ -115,10 +115,12 @@ const renderTestItems = produits.map((p) =>
 );
 
 masonry({
-	col: 4,
+	col: 6,
 	spaceX: 5,
 	spaceY: 5,
 	renderItems: renderTestItems,
 	container: '.container',
 	debug: true,
 });
+
+*/
