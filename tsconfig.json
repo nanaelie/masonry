@@ -4,7 +4,10 @@
     "module": "ESNext",
     "strict": true,
     "removeComments": true,
-    "declaration": false
+    "lib": ["DOM", "ES2020"],
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "types": ["react"]
   },
   "include": ["src"]
 }
