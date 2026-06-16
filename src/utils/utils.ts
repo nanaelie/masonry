@@ -1,23 +1,3 @@
-import $ from '../../constants/constants';
-
-function createCols(pad: number): HTMLElement {
-    const col: HTMLElement = document.createElement('div');
-    col.style.display = 'flex';
-    col.style.flexDirection = 'column';
-    col.style.gap = `${pad}px`;
-    col.style.flexGrow = '1';
-    return col;
-}
-
-function makeSpaceX(spaceY: number, container: string) {
-    $(`${container}`).style.display = `flex`;
-    $(`${container}`).style.gap = `${spaceY}px`;
-}
-
-function styleContainer(container: string) {
-	$(`${container}`).style.padding = '4px';
-}
-
 function getResponsiveCol(): number {
 	const config = {
 		default: 1,
@@ -34,13 +14,6 @@ function getResponsiveCol(): number {
     return config.default || 1;
 }
 
-/*function getLastFilledRowIndex(cols: HTMLDivElement[]) {
-    let lastIndex = 0;
-    for (let i in cols) {
-        // if (cols[i].querySelectorAll('*'))
-    }
-}*/
-
 function initItemsCounter(col: number): number[] {
     const items: number[] = [];
     for (let k = 0; k < col; k++) {
@@ -49,4 +22,4 @@ function initItemsCounter(col: number): number[] {
     return items;
 }
 
-export { makeSpaceX, createCols, getResponsiveCol, initItemsCounter };
+export { getResponsiveCol, initItemsCounter };
